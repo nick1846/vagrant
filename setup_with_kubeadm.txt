@@ -1,3 +1,5 @@
+#on MASTER NODE
+
 #1 Initializing your control-plane node
 
 kubeadm init --pod-network-cidr 10.2440.0/16 --apiserver-advertise-address=192.168.56.2
@@ -5,6 +7,9 @@ kubeadm init --pod-network-cidr 10.2440.0/16 --apiserver-advertise-address=192.1
 #2 Installing a Pod network add-on (weave net)
 
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+
+#on WORKER NODES
 
 #3 Joining nodes
 
