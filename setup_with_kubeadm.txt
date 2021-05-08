@@ -1,0 +1,11 @@
+#1 Initializing your control-plane node
+
+kubeadm init --pod-network-cidr 10.2440.0/16 --apiserver-advertise-address=192.168.56.2
+
+#2 Installing a Pod network add-on (weave net)
+
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+#3 Joining nodes
+
+kubeadm join --token <token> <control-plane-host>:<control-plane-port> --discovery-token-ca-cert-hash sha256:<hash>
