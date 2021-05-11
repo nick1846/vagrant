@@ -13,6 +13,7 @@ sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
+sudo mkdir /etc/docker
 
 cat <<EOF | sudo tee /etc/docker/daemon.json
 {
