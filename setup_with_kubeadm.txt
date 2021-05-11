@@ -2,7 +2,7 @@
 
 #1 Initializing your control-plane node
 
-kubeadm init --pod-network-cidr 10.2440.0/16 --apiserver-advertise-address=192.168.56.2
+kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address=192.168.56.2
 
 #2 Installing a Pod network add-on (weave net)
 
